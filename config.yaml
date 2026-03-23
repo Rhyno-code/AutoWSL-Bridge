@@ -1,0 +1,10 @@
+# AutoWSL-Bridge Configuration
+# List the Windows directories that are safe to access from WSL
+vault:
+  - "C:\\Users\\USER\\Desktop"
+  - "C:\\Users\\USER\\Documents"
+
+# Security Settings
+security:
+  token: "SECRET_TOKEN_CHANGE_ME"
+  read_only: false  # Set to true to disable 'push' and other write operations
