@@ -6,5 +6,5 @@ vault:
 
 # Security Settings
 security:
-  token: "SECRET_TOKEN_CHANGE_ME"
+  token: "deb976c797981ca8d3c2822c2668a9afa5a9393d518c481d97a986547562ecbd"
   read_only: false  # Set to true to disable 'push' and other write operations

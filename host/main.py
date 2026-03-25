@@ -159,5 +159,5 @@ def set_clipboard(content: str):
 # --- Main Entry Point ---
 if __name__ == '__main__':
     logger.info("Starting AutoWSL-Bridge Host API on port 9000...")
-    # Bind to 127.0.0.1 (Localhost) to ensure access only from local WSL/Windows
-    uvicorn.run(app, host='127.0.0.1', port=9000)
+    # Bind to 0.0.0.0 to ensure access from the WSL virtual bridge and other interfaces
+    uvicorn.run(app, host='0.0.0.0', port=9000)

@@ -18,6 +18,26 @@ class Vault:
         self.config_path = root_dir / config_path
         self.allowed_paths = self._load_allowed_paths()
 
+    def _load_config(self) -> dict:
+        """
+        Loads the configuration dictionary from the YAML file.
+        :return: The full configuration dictionary.
+        """
+        if not self.config_path.exists():
+            return {}
+        try:
+            with open(self.config_path, "r") as f:
+                return yaml.safe_load(f) or {}
+        except Exception:
+            return {}
+
+    @property
+    def config(self) -> dict:
+        """
+        Returns the full configuration dictionary.
+        """
+        return self._load_config()
+
     def _load_allowed_paths(self) -> List[Path]:
         """
         Loads the list of whitelisted Windows paths from the configuration file.
